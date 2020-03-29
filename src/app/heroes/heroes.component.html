@@ -1,0 +1,11 @@
+<div class="heroes">
+    <ng-container *ngIf="hero.name === ''; else name">
+        <h3><span style="color: rgb(199, 69, 69)">Not Entered</span></h3>
+    </ng-container>
+    <ng-template #name>
+        <h3 style="cursor: pointer" (click)="clieckName()">{{hero.name}}</h3>
+    </ng-template>
+    <ng-container *ngIf="selected">
+        <app-hero-detail [hero]="hero"></app-hero-detail>
+    </ng-container>
+</div>
